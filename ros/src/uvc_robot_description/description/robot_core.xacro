@@ -21,235 +21,635 @@
 
     <link name="base_link"/>
 
-    <!-- CHASSIS -->
-    <joint name="chassis_joint" type="fixed">
+    <!-- TORSO -->
+    <joint name="torso_joint" type="fixed">
         <parent link="base_link"/>
-        <child link="chassis"/>
-        <origin xyz="-0.144 0 0"/>
+        <child link="torso_link"/>
+        <origin xyz="0 0 0.34"/>
     </joint>
 
-    <link name="chassis">
+    <link name="torso_link">
         <visual>
-            <origin xyz="0.144 0 0.038"/>
+            <origin xyz="-0.00475 0 -0.01675"/>
             <geometry>
-                <box size="0.096 0.168 0.048"/>
+                <box size="0.0805 0.089 0.0605"/>
             </geometry>
             <material name="white"/>
         </visual>
 
         <visual>
-            <origin xyz="0.144 0.09 0.038"/>
+            <origin xyz="-0.06925 0 -0.012"/>
             <geometry>
-                <box size="0.288 0.012 0.048"/>
+                <box size="0.0455 0.105 0.088"/>
             </geometry>
             <material name="white"/>
         </visual>
-
-        <visual>
-            <origin xyz="0.144 -0.09 0.038"/>
-            <geometry>
-                <box size="0.288 0.012 0.048"/>
-            </geometry>
-            <material name="white"/>
-        </visual>
-
-        <visual>
-            <origin xyz="0.00125 0.11995 0.038"/>
-            <geometry>
-                <box size="0.0025 0.0479 0.048"/>
-            </geometry>
-            <material name="white"/>
-        </visual>
-
-        <visual>
-            <origin xyz="0.00125 -0.11995 0.038"/>
-            <geometry>
-                <box size="0.0025 0.0479 0.048"/>
-            </geometry>
-            <material name="white"/>
-        </visual>
-
-        <visual>
-            <origin xyz="0.28675 0.11995 0.038"/>
-            <geometry>
-                <box size="0.0025 0.0479 0.048"/>
-            </geometry>
-            <material name="white"/>
-        </visual>
-
-        <visual>
-            <origin xyz="0.28675 -0.11995 0.038"/>
-            <geometry>
-                <box size="0.0025 0.0479 0.048"/>
-            </geometry>
-            <material name="white"/>
-        </visual>
-
-        <visual>
-            <origin xyz="0.144 0.14515 0.038"/>
-            <geometry>
-                <box size="0.288 0.0025 0.048"/>
-            </geometry>
-            <material name="white"/>
-        </visual>
-
-        <visual>
-            <origin xyz="0.144 -0.14515 0.038"/>
-            <geometry>
-                <box size="0.288 0.0025 0.048"/>
-            </geometry>
-            <material name="white"/>
-        </visual>
-
-        <collision>
-            <origin xyz="0.144 0 0.038"/>
-            <geometry>
-                <box size="0.288 0.2928 0.048"/>
-            </geometry>
-        </collision>
-
-
-        <xacro:inertial_box mass="0.5" x="0.288" y="0.2928" z="0.048">
-            <origin xyz="0.144 0 0.038" rpy="0 0 0"/>
-        </xacro:inertial_box>
-
     </link>
-
-    <gazebo reference="chassis">
-        <material>Gazebo/White</material>
-    </gazebo>
-
-    <joint name="front_left_wheel_joint" type="continuous">
-        <parent link="base_link"/>
-        <child link="front_left_wheel"/>
-        <origin xyz="0.096 0.121 0.038" rpy="-${pi/2} 0 0"/>
-        <axis xyz="0 0 1"/>
-    </joint>
-
-    <link name="front_left_wheel">
-        <visual>
-            <geometry>
-                <cylinder radius="0.038" length="0.0408"/>
-            </geometry>
-            <material name="blue"/>
-        </visual>
-
-        <collision>
-            <geometry>
-                <cylinder radius="0.038" length="0.0408"/>
-            </geometry>
-        </collision>
-
-        <xacro:inertial_cylinder mass="0.1" length="0.038" radius="0.0408">
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-        </xacro:inertial_cylinder>
-
-    </link>
-
-    <gazebo reference="front_left_wheel">
-        <material>Gazebo/Blue</material>
-        <mu1 value="0.0"/>
-        <mu2 value="0.0"/>
-    </gazebo>
-
-    <joint name="back_left_wheel_joint" type="continuous">
-        <parent link="base_link"/>
-        <child link="back_left_wheel"/>
-        <origin xyz="-0.096 0.121 0.038" rpy="-${pi/2} 0 0"/>
-        <axis xyz="0 0 1"/>
-    </joint>
-
-    <link name="back_left_wheel">
-        <visual>
-            <geometry>
-                <cylinder radius="0.038" length="0.0408"/>
-            </geometry>
-            <material name="blue"/>
-        </visual>
-
-        <collision>
-            <geometry>
-                <cylinder radius="0.038" length="0.0408"/>
-            </geometry>
-        </collision>
-
-        <xacro:inertial_cylinder mass="0.1" length="0.038" radius="0.0408">
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-        </xacro:inertial_cylinder>
-
-    </link>
-
-    <gazebo reference="back_left_wheel">
-        <material>Gazebo/Blue</material>
-        <mu1 value="0.0"/>
-        <mu2 value="0.0"/>
-    </gazebo>
-
-    <joint name="front_right_wheel_joint" type="continuous">
-        <parent link="base_link"/>
-        <child link="front_right_wheel"/>
-        <origin xyz="0.096 -0.121 0.038" rpy="${pi/2} 0 0"/>
-        <axis xyz="0 0 -1"/>
-    </joint>
-
-    <link name="front_right_wheel">
-        <visual>
-            <geometry>
-                <cylinder radius="0.038" length="0.0408"/>
-            </geometry>
-            <material name="blue"/>
-        </visual>
-
-        <collision>
-            <geometry>
-                <cylinder radius="0.038" length="0.0408"/>
-            </geometry>
-        </collision>
-
-        <xacro:inertial_cylinder mass="0.1" length="0.038" radius="0.0408">
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-        </xacro:inertial_cylinder>
-    </link>
-
-    <gazebo reference="front_right_wheel">
-        <material>Gazebo/Blue</material>
-        <mu1 value="0.0"/>
-        <mu2 value="0.0"/>
-    </gazebo>
-
 
     
-    <joint name="back_right_wheel_joint" type="continuous">
-        <parent link="base_link"/>
-        <child link="back_right_wheel"/>
-        <origin xyz="-0.096 -0.121 0.038" rpy="${pi/2} 0 0"/>
-        <axis xyz="0 0 -1"/>
+    <joint name="waist_joint" type="revolute">
+        <parent link="torso_link"/>
+        <child link="waist_link"/>
+        <origin xyz="-0.02425 0 -0.04715"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-10" upper="10" effort="10" velocity="10"/>
     </joint>
 
-    <link name="back_right_wheel">
+    <link name="waist_link">
         <visual>
+            <origin xyz="-0.00275 0 -0.022"/>
             <geometry>
-                <cylinder radius="0.038" length="0.0408"/>
+                <box size="0.0505 0.076 0.036"/>
             </geometry>
-            <material name="blue"/>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <!-- HEAD -->
+    <joint name="head_joint" type="revolute">
+        <parent link="torso_link"/>
+        <child link="head_link"/>
+        <origin xyz="-0.00395 0 0.0134"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="head_link">
+        <visual>
+            <origin xyz="0.00225 0 0.0245"/>
+            <geometry>
+                <box size="0.0495 0.032 0.038"/>
+            </geometry>
+            <material name="white"/>
         </visual>
 
         <collision>
+            <origin xyz="0.00225 0 0.0245"/>
             <geometry>
-                <cylinder radius="0.038" length="0.0408"/>
+                <box size="0.0495 0.032 0.038"/>
             </geometry>
         </collision>
 
-        <xacro:inertial_cylinder mass="0.1" length="0.038" radius="0.0408">
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-        </xacro:inertial_cylinder>
 
+        <xacro:inertial_box mass="0.025" x="0.0495" y="0.032" z="0.038">
+            <origin xyz="0.00225 0 0.0245" rpy="0 0 0"/>
+        </xacro:inertial_box>
     </link>
 
-    <gazebo reference="back_right_wheel">
-        <material>Gazebo/Blue</material>
-        <mu1 value="0.0"/>
-        <mu2 value="0.0"/>
-    </gazebo>
+    <!-- LEFT ARM -->
+    <joint name="left_shoulder_joint" type="revolute">
+        <parent link="torso_link"/>
+        <child link="left_shoulder_link"/>
+        <origin xyz="-0.0041 0.04725 -0.0009"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="left_shoulder_link">
+        <visual>
+            <origin xyz="0 0.0175 0"/>
+            <geometry>
+                <box size="0.0465 0.036 0.02"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0.0175 0"/>
+            <geometry>
+                <box size="0.0465 0.036 0.02"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="left_arm_joint" type="revolute">
+        <parent link="left_shoulder_link"/>
+        <child link="left_arm_link"/>
+        <origin xyz="0 0.02645 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="left_arm_link">
+        <visual>
+            <origin xyz=" 0.00025 0 -0.01125"/>
+            <geometry>
+                <box size="0.0355 0.025 0.0425"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="-0.01175 -0.00025 -0.04825"/>
+            <geometry>
+                <box size="0.0425 0.0225 0.0315"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="-0.01125 -0.00025 -0.06875"/>
+            <geometry>
+                <box size="0.0505 0.0335 0.0095"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="left_elbow_joint" type="revolute">
+        <parent link="left_arm_link"/>
+        <child link="left_elbow_link"/>
+        <origin xyz="0.00225 -0.00025 -0.07365"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="left_elbow_link">
+        <visual>
+            <origin xyz="-0.009 0 -0.012"/>
+            <geometry>
+                <box size="0.042 0.032 0.024"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="left_forearm_joint" type="revolute">
+        <parent link="left_elbow_link"/>
+        <child link="left_forearm_link"/>
+        <origin xyz="0.0022 0.0 -0.0117"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="left_forearm_link">
+        <visual>
+            <origin xyz="0 0 -0.009"/>
+            <geometry>
+                <box size="0.02 0.0465 0.036"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0.001 0 -0.0465"/>
+            <geometry>
+                <box size="0.021 0.032 0.04"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0.003 -0.00175 -0.0785"/>
+            <geometry>
+                <box size="0.029 0.0235 0.024"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0 0.001 -0.094"/>
+            <geometry>
+                <box size="0.0065 0.0175 0.024" rpy="-0.357409 -0.862853 -0.357411 -1.71778"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <!-- RIGHT ARM -->
+    <joint name="right_shoulder_joint" type="revolute">
+        <parent link="torso_link"/>
+        <child link="right_shoulder_link"/>
+        <origin xyz="-0.0041 -0.04725 -0.0009"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="right_shoulder_link">
+        <visual>
+            <origin xyz="0 -0.0175 0"/>
+            <geometry>
+                <box size="0.0465 0.036 0.02"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 -0.0175 0"/>
+            <geometry>
+                <box size="0.0465 0.036 0.02"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="right_arm_joint" type="revolute">
+        <parent link="right_shoulder_link"/>
+        <child link="right_arm_link"/>
+        <origin xyz="0 -0.02645 0"/>
+        <axis xyz="-1 0 0"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="right_arm_link">
+        <visual>
+            <origin xyz=" 0.00025 0 -0.01125"/>
+            <geometry>
+                <box size="0.0355 0.025 0.0425"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="-0.01175 0.00025 -0.04825"/>
+            <geometry>
+                <box size="0.0425 0.0225 0.0315"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="-0.01125 0.00025 -0.06875"/>
+            <geometry>
+                <box size="0.0505 0.0335 0.0095"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="right_elbow_joint" type="revolute">
+        <parent link="right_arm_link"/>
+        <child link="right_elbow_link"/>
+        <origin xyz="0.00225 0.00025 -0.07365"/>
+        <axis xyz="0 0 -1"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="right_elbow_link">
+        <visual>
+            <origin xyz="-0.009 0 -0.012"/>
+            <geometry>
+                <box size="0.042 0.032 0.024"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="right_forearm_joint" type="revolute">
+        <parent link="right_elbow_link"/>
+        <child link="right_forearm_link"/>
+        <origin xyz="0.0022 0.0 -0.0117"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="right_forearm_link">
+        <visual>
+            <origin xyz="0 0 -0.009"/>
+            <geometry>
+                <box size="0.02 0.0465 0.036"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0.001 0 -0.0465"/>
+            <geometry>
+                <box size="0.021 0.032 0.04"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0.003 0.00175 -0.0785"/>
+            <geometry>
+                <box size="0.029 0.0235 0.024"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0 -0.001 -0.094"/>
+            <geometry>
+                <box size="0.0065 0.0175 0.024" rpy="-0.357409 -0.862853 -0.357411 -1.71778"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <!-- LEFT LEG -->
+
+    <joint name="left_hip1_joint" type="revolute">
+        <parent link="waist_link"/>
+        <child link="left_hip1_link"/>
+        <origin xyz="0.00875 0.02145 -0.03995"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="left_hip1_link">
+        <visual>
+            <origin xyz="0 -0.0015 -0.0155"/>
+            <geometry>
+                <box size="0.047 0.024 0.031"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="left_hip2_joint" type="revolute">
+        <parent link="left_hip1_link"/>
+        <child link="left_hip2_link"/>
+        <origin xyz="0 -0.00455 -0.02235"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="left_hip2_link">
+        <visual>
+            <origin xyz="0 0.01125 -0.00025"/>
+            <geometry>
+                <box size="0.032 0.0425 0.0235"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0 0.01125 -0.03"/>
+            <geometry>
+                <box size="0.02 0.0465 0.036"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+    
+    <joint name="left_leg_joint" type="revolute">
+        <parent link="left_hip2_link"/>
+        <child link="left_leg_link"/>
+        <axis xyz="0 -1 0"/>
+        <origin xyz="-0.0008 0.0113 -0.0387"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="left_leg_link">
+        <visual>
+            <origin xyz="0.00075 0 -0.011"/>
+            <geometry>
+                <box size="0.0235 0.032 0.042"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0.006 0.0 -0.054"/>
+            <geometry>
+                <box size="0.032 0.042 0.0225" rpy="0.654047 0.654046 0.380062 2.415205"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0.003 0 -0.037"/>
+            <geometry>
+                <box size="0.0465 0.036 0.02" rpy="-0.697151 -0.697152 -0.167211 -2.810252"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="left_knee_joint" type="revolute">
+        <parent link="left_leg_link"/>
+        <child link="left_knee_link"/>
+        <axis xyz="0 1 0"/>
+        <origin xyz="0.00015 0.0 -0.06375"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="left_knee_link">
+        <visual>
+            <origin xyz="0.00425 0 -0.008"/>
+            <geometry>
+                <box size="0.0465 0.036 0.02"  rpy=" 0.454459 0.454452 0.76612 1.834125"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0.0115 0 -0.028"/>
+            <geometry>
+                <box size="0.0215 0.032 0.02"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0.004 0.0 -0.054"/>
+            <geometry>
+                <box size="0.032 0.042 0.023"  rpy="-0.63513 -0.635128 -0.43957 -2.313314"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="left_ankle_joint" type="revolute">
+        <parent link="left_knee_link"/>
+        <child link="left_ankle_link"/>
+        <axis xyz="0 1 0"/>
+        <origin xyz="0.0003 -0.0002 -0.0643"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="left_ankle_link">
+        <visual>
+            <origin xyz="0 0 -0.037"/>
+            <geometry>
+                <box size="0.032 0.0425 0.0235"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0 0 -0.007"/>
+            <geometry>
+                <box size="0.02 0.0465 0.036"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="left_foot_joint" type="revolute">
+        <parent link="left_ankle_link"/>
+        <child link="left_foot_link"/>
+        <axis xyz="1 0 0"/>
+        <origin xyz="0 -0.01125 -0.037"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="left_foot_link">
+        <visual>
+            <origin xyz="0 0.0265 -0.01825"/>
+            <geometry>
+                <box size="0.108 0.071 0.0165"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <!-- RIGHT LEG -->
+
+    <joint name="right_hip1_joint" type="revolute">
+        <parent link="waist_link"/>
+        <child link="right_hip1_link"/>
+        <origin xyz="0.00875 -0.02145 -0.03995"/>
+        <axis xyz="0 0 -1"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="right_hip1_link">
+        <visual>
+            <origin xyz="0 0.0015 -0.0155"/>
+            <geometry>
+                <box size="0.047 0.024 0.031"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="right_hip2_joint" type="revolute">
+        <parent link="right_hip1_link"/>
+        <child link="right_hip2_link"/>
+        <origin xyz="0 0.00455 -0.02235"/>
+        <axis xyz="-1 0 0"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="right_hip2_link">
+        <visual>
+            <origin xyz="0 -0.01125 -0.00025"/>
+            <geometry>
+                <box size="0.032 0.0425 0.0235"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0 -0.01125 -0.03"/>
+            <geometry>
+                <box size="0.02 0.0465 0.036"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+    
+    <joint name="right_leg_joint" type="revolute">
+        <parent link="right_hip2_link"/>
+        <child link="right_leg_link"/>
+        <axis xyz="0 -1 0"/>
+        <origin xyz="-0.0008 -0.0113 -0.0387"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="right_leg_link">
+        <visual>
+            <origin xyz="0.00075 0 -0.011"/>
+            <geometry>
+                <box size="0.0235 0.032 0.042"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0.006 0.0 -0.054"/>
+            <geometry>
+                <box size="0.032 0.042 0.0225" rpy="0.654047 0.654046 0.380062 2.415205"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0.003 0 -0.037"/>
+            <geometry>
+                <box size="0.0465 0.036 0.02" rpy="-0.697151 -0.697152 -0.167211 -2.810252"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="right_knee_joint" type="revolute">
+        <parent link="right_leg_link"/>
+        <child link="right_knee_link"/>
+        <axis xyz="0 1 0"/>
+        <origin xyz="0.00015 0.0 -0.06375"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="right_knee_link">
+        <visual>
+            <origin xyz="0.00425 0 -0.008"/>
+            <geometry>
+                <box size="0.0465 0.036 0.02"  rpy=" 0.454459 0.454452 0.76612 1.834125"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0.0115 0 -0.028"/>
+            <geometry>
+                <box size="0.0215 0.032 0.02"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0.004 0.0 -0.054"/>
+            <geometry>
+                <box size="0.032 0.042 0.023"  rpy="-0.63513 -0.635128 -0.43957 -2.313314"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="right_ankle_joint" type="revolute">
+        <parent link="right_knee_link"/>
+        <child link="right_ankle_link"/>
+        <axis xyz="0 1 0"/>
+        <origin xyz="0.0003 0.0002 -0.0643"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="right_ankle_link">
+        <visual>
+            <origin xyz="0 0 -0.037"/>
+            <geometry>
+                <box size="0.032 0.0425 0.0235"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <visual>
+            <origin xyz="0 0 -0.007"/>
+            <geometry>
+                <box size="0.02 0.0465 0.036"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="right_foot_joint" type="revolute">
+        <parent link="right_ankle_link"/>
+        <child link="right_foot_link"/>
+        <axis xyz="-1 0 0"/>
+        <origin xyz="0 0.01125 -0.037"/>
+        <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+    </joint>
+
+    <link name="right_foot_link">
+        <visual>
+            <origin xyz="0 -0.0265 -0.01825"/>
+            <geometry>
+                <box size="0.108 0.071 0.0165"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
 
 </robot>
