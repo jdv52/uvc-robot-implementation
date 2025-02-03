@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "embedded"
+		},
+		{
+			"path": "ros"
+		}
+	],
+	"settings": {}
+}

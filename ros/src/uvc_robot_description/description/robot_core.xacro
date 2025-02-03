@@ -57,7 +57,7 @@
 
     <link name="waist_link">
         <visual>
-            <origin xyz="-0.00275 0 -0.022"/>
+            <origin xyz="0.00275 0 -0.022"/>
             <geometry>
                 <box size="0.0505 0.076 0.036"/>
             </geometry>
@@ -92,7 +92,7 @@
 
 
         <xacro:inertial_box mass="0.025" x="0.0495" y="0.032" z="0.038">
-            <origin xyz="0.00225 0 0.0245" rpy="0 0 0"/>
+            <origin xyz="0.00225 0 0.0245"/>
         </xacro:inertial_box>
     </link>
 
@@ -203,14 +203,6 @@
             <origin xyz="0.003 -0.00175 -0.0785"/>
             <geometry>
                 <box size="0.029 0.0235 0.024"/>
-            </geometry>
-            <material name="white"/>
-        </visual>
-
-        <visual>
-            <origin xyz="0 0.001 -0.094"/>
-            <geometry>
-                <box size="0.0065 0.0175 0.024" rpy="-0.357409 -0.862853 -0.357411 -1.71778"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -326,14 +318,6 @@
             </geometry>
             <material name="white"/>
         </visual>
-
-        <visual>
-            <origin xyz="0 -0.001 -0.094"/>
-            <geometry>
-                <box size="0.0065 0.0175 0.024" rpy="-0.357409 -0.862853 -0.357411 -1.71778"/>
-            </geometry>
-            <material name="white"/>
-        </visual>
     </link>
 
     <!-- LEFT LEG -->
@@ -400,17 +384,17 @@
         </visual>
 
         <visual>
-            <origin xyz="0.006 0.0 -0.054"/>
+            <origin xyz="0.006 0.0 -0.054" rpy="2.0887992 -0.0000101 1.5708007"/>
             <geometry>
-                <box size="0.032 0.042 0.0225" rpy="0.654047 0.654046 0.380062 2.415205"/>
+                <box size="0.032 0.042 0.0225"/>
             </geometry>
             <material name="white"/>
         </visual>
 
         <visual>
-            <origin xyz="0.003 0 -0.037"/>
+            <origin xyz="0.003 0 -0.037" rpy="2.6707995 -0.0000107 1.5708003"/>
             <geometry>
-                <box size="0.0465 0.036 0.02" rpy="-0.697151 -0.697152 -0.167211 -2.810252"/>
+                <box size="0.0465 0.036 0.02"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -426,9 +410,9 @@
 
     <link name="left_knee_link">
         <visual>
-            <origin xyz="0.00425 0 -0.008"/>
+            <origin xyz="0.00425 0 -0.008" rpy="1.0707999 -0.000011 1.5707994"/>
             <geometry>
-                <box size="0.0465 0.036 0.02"  rpy=" 0.454459 0.454452 0.76612 1.834125"/>
+                <box size="0.0465 0.036 0.02"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -442,9 +426,9 @@
         </visual>
 
         <visual>
-            <origin xyz="0.004 0.0 -0.054"/>
+            <origin xyz="0.004 0.0 -0.054" rpy="1.9307994 -0.0000108 1.5708006"/>
             <geometry>
-                <box size="0.032 0.042 0.023"  rpy="-0.63513 -0.635128 -0.43957 -2.313314"/>
+                <box size="0.032 0.042 0.023"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -558,17 +542,17 @@
         </visual>
 
         <visual>
-            <origin xyz="0.006 0.0 -0.054"/>
+            <origin xyz="0.006 0.0 -0.054" rpy="2.0887992 -0.0000101 1.5708007"/>
             <geometry>
-                <box size="0.032 0.042 0.0225" rpy="0.654047 0.654046 0.380062 2.415205"/>
+                <box size="0.032 0.042 0.0225"/>
             </geometry>
             <material name="white"/>
         </visual>
 
         <visual>
-            <origin xyz="0.003 0 -0.037"/>
+            <origin xyz="0.003 0 -0.037" rpy="2.6707995 -0.0000107 1.5708003"/>
             <geometry>
-                <box size="0.0465 0.036 0.02" rpy="-0.697151 -0.697152 -0.167211 -2.810252"/>
+                <box size="0.0465 0.036 0.02"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -584,9 +568,9 @@
 
     <link name="right_knee_link">
         <visual>
-            <origin xyz="0.00425 0 -0.008"/>
+            <origin xyz="0.00425 0 -0.008" rpy="1.0707999 -0.000011 1.5707994"/>
             <geometry>
-                <box size="0.0465 0.036 0.02"  rpy=" 0.454459 0.454452 0.76612 1.834125"/>
+                <box size="0.0465 0.036 0.02"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -600,9 +584,9 @@
         </visual>
 
         <visual>
-            <origin xyz="0.004 0.0 -0.054"/>
+            <origin xyz="0.004 0.0 -0.054" rpy="1.9307994 -0.0000108 1.5708006"/>
             <geometry>
-                <box size="0.032 0.042 0.023"  rpy="-0.63513 -0.635128 -0.43957 -2.313314"/>
+                <box size="0.032 0.042 0.023"/>
             </geometry>
             <material name="white"/>
         </visual>
