@@ -44,7 +44,31 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="-0.00475 0 -0.01675"/>
+            <geometry>
+                <box size="0.0805 0.089 0.0605"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="-0.06925 0 -0.012"/>
+            <geometry>
+                <box size="0.0455 0.105 0.088"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.126" y="0.105" z="0.088">
+            <origin xyz="-0.029 0 -0.012" rpy="0 0 0"/>
+        </xacro:inertial_box>
+
+
     </link>
+
+    <gazebo reference="torso_link">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     
     <joint name="waist_joint" type="revolute">
@@ -63,7 +87,22 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0.00275 0 -0.022"/>
+            <geometry>
+                <box size="0.0505 0.076 0.036"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.0505" y="0.076" z="0.036">
+            <origin xyz="0.00275 0 -0.022" rpy="0 0 0"/>
+        </xacro:inertial_box>
     </link>
+
+    <gazebo reference="waist_link">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <!-- HEAD -->
     <joint name="head_joint" type="revolute">
@@ -90,11 +129,15 @@
             </geometry>
         </collision>
 
-
-        <xacro:inertial_box mass="0.025" x="0.0495" y="0.032" z="0.038">
+        <xacro:inertial_box mass="0.05" x="0.0495" y="0.032" z="0.038">
             <origin xyz="0.00225 0 0.0245"/>
         </xacro:inertial_box>
     </link>
+
+    <gazebo reference="head_link">
+        <material>Gazebo/White</material>
+    </gazebo>
+
 
     <!-- LEFT ARM -->
     <joint name="left_shoulder_joint" type="revolute">
@@ -120,7 +163,15 @@
                 <box size="0.0465 0.036 0.02"/>
             </geometry>
         </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.0465" y="0.036" z="0.02">
+            <origin xyz="0 0.0175 0"/>
+        </xacro:inertial_box>
     </link>
+
+     <gazebo reference="left_shoulder_linnk">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="left_arm_joint" type="revolute">
         <parent link="left_shoulder_link"/>
@@ -154,7 +205,36 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz=" 0.00025 0 -0.01125"/>
+            <geometry>
+                <box size="0.0355 0.025 0.0425"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="-0.01175 -0.00025 -0.04825"/>
+            <geometry>
+                <box size="0.0425 0.0225 0.0315"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="-0.01125 -0.00025 -0.06875"/>
+            <geometry>
+                <box size="0.0505 0.0335 0.0095"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.0505" y="0.0335" z="0.0835">
+            <origin xyz="-0.011 0 -0.032"/>
+        </xacro:inertial_box>
     </link>
+
+    <gazebo reference="left_shoulder_link">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="left_elbow_joint" type="revolute">
         <parent link="left_arm_link"/>
@@ -172,6 +252,17 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="-0.009 0 -0.012"/>
+            <geometry>
+                <box size="0.042 0.032 0.024"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="-0.042" y="0.032" z="0.024">
+            <origin xyz="-0.009 0 -0.012"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="left_forearm_joint" type="revolute">
@@ -206,6 +297,31 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0 0 -0.009"/>
+            <geometry>
+                <box size="0.02 0.0465 0.036"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0.001 0 -0.0465"/>
+            <geometry>
+                <box size="0.021 0.032 0.04"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0.003 -0.00175 -0.0785"/>
+            <geometry>
+                <box size="0.029 0.0235 0.024"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.029" y="0.0465" z="0.1">
+            <origin xyz="0.003 0 -0.041"/>
+        </xacro:inertial_box>
     </link>
 
     <!-- RIGHT ARM -->
@@ -232,7 +348,16 @@
                 <box size="0.0465 0.036 0.02"/>
             </geometry>
         </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.0465" y="0.036" z="0.02">
+            <origin xyz="0 -0.0175 0"/>
+        </xacro:inertial_box>
     </link>
+
+    <gazebo reference="right_shoulder_link">
+        <material>Gazebo/White</material>
+    </gazebo>
+
 
     <joint name="right_arm_joint" type="revolute">
         <parent link="right_shoulder_link"/>
@@ -266,7 +391,37 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz=" 0.00025 0 -0.01125"/>
+            <geometry>
+                <box size="0.0355 0.025 0.0425"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="-0.01175 0.00025 -0.04825"/>
+            <geometry>
+                <box size="0.0425 0.0225 0.0315"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="-0.01125 0.00025 -0.06875"/>
+            <geometry>
+                <box size="0.0505 0.0335 0.0095"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.0505" y="0.0335" z="0.0835">
+            <origin xyz="-0.011 0 -0.032"/>
+        </xacro:inertial_box>
     </link>
+
+    <gazebo reference="right_arm_link">
+        <material>Gazebo/White</material>
+    </gazebo>
+
 
     <joint name="right_elbow_joint" type="revolute">
         <parent link="right_arm_link"/>
@@ -284,6 +439,17 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="-0.009 0 -0.012"/>
+            <geometry>
+                <box size="0.042 0.032 0.024"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.042" y="0.032" z="0.024">
+            <origin xyz="-0.009 0 -0.012"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="right_forearm_joint" type="revolute">
@@ -318,6 +484,31 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0 0 -0.009"/>
+            <geometry>
+                <box size="0.02 0.0465 0.036"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0.001 0 -0.0465"/>
+            <geometry>
+                <box size="0.021 0.032 0.04"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0.003 0.00175 -0.0785"/>
+            <geometry>
+                <box size="0.029 0.0235 0.024"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.029" y="0.0465" z="0.1">
+            <origin xyz="0.003 0 -0.041"/>
+        </xacro:inertial_box>
     </link>
 
     <!-- LEFT LEG -->
@@ -338,6 +529,17 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0 -0.0015 -0.0155"/>
+            <geometry>
+                <box size="0.047 0.024 0.031"/>
+            </geometry>
+        </collision>
+        
+        <xacro:inertial_box mass="0.5" x="0.047" y="0.024" z="0.031">
+            <origin xyz="0 -0.0015 -0.0155"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="left_hip2_joint" type="revolute">
@@ -364,6 +566,24 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0 0.01125 -0.00025"/>
+            <geometry>
+                <box size="0.032 0.0425 0.0235"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0 0.01125 -0.03"/>
+            <geometry>
+                <box size="0.02 0.0465 0.036"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.032" y="0.0465" z="0.0595">
+            <origin xyz="0 0.01125 -0.018"/>
+        </xacro:inertial_box>
     </link>
     
     <joint name="left_leg_joint" type="revolute">
@@ -398,6 +618,31 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0.00075 0 -0.011"/>
+            <geometry>
+                <box size="0.0235 0.032 0.042"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0.006 0.0 -0.054" rpy="2.0887992 -0.0000101 1.5708007"/>
+            <geometry>
+                <box size="0.032 0.042 0.0225"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0.003 0 -0.037" rpy="2.6707995 -0.0000107 1.5708003"/>
+            <geometry>
+                <box size="0.0465 0.036 0.02"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.032" y="0.0465" z="0.07">
+            <origin xyz="0 0 -0.044"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="left_knee_joint" type="revolute">
@@ -432,6 +677,31 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0.00425 0 -0.008" rpy="1.0707999 -0.000011 1.5707994"/>
+            <geometry>
+                <box size="0.0465 0.036 0.02"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0.0115 0 -0.028"/>
+            <geometry>
+                <box size="0.0215 0.032 0.02"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0.004 0.0 -0.054" rpy="1.9307994 -0.0000108 1.5708006"/>
+            <geometry>
+                <box size="0.032 0.042 0.023"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.032" y="0.0465" z="0.07">
+            <origin xyz="0 0 -0.044"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="left_ankle_joint" type="revolute">
@@ -458,6 +728,24 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0 0 -0.037"/>
+            <geometry>
+                <box size="0.032 0.0425 0.0235"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0 0 -0.007"/>
+            <geometry>
+                <box size="0.02 0.0465 0.036"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.032" y="0.0465" z="0.0595">
+            <origin xyz="0 0 -0.019"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="left_foot_joint" type="revolute">
@@ -476,6 +764,17 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0 0.0265 -0.01825"/>
+            <geometry>
+                <box size="0.108 0.071 0.0165"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.108" y="0.071" z="0.0165">
+            <origin xyz="0 0.0265 -0.01825"/>
+        </xacro:inertial_box>
     </link>
 
     <!-- RIGHT LEG -->
@@ -496,6 +795,17 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0 0.0015 -0.0155"/>
+            <geometry>
+                <box size="0.047 0.024 0.031"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.047" y="0.024" z="0.031">
+            <origin xyz="0 0.0015 -0.0155"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="right_hip2_joint" type="revolute">
@@ -522,6 +832,24 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0 -0.01125 -0.00025"/>
+            <geometry>
+                <box size="0.032 0.0425 0.0235"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0 -0.01125 -0.03"/>
+            <geometry>
+                <box size="0.02 0.0465 0.036"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.032" y="0.0465" z="0.0595">
+            <origin xyz="0 -0.01125 -0.018"/>
+        </xacro:inertial_box>
     </link>
     
     <joint name="right_leg_joint" type="revolute">
@@ -556,6 +884,31 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0.00075 0 -0.011"/>
+            <geometry>
+                <box size="0.0235 0.032 0.042"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0.006 0.0 -0.054" rpy="2.0887992 -0.0000101 1.5708007"/>
+            <geometry>
+                <box size="0.032 0.042 0.0225"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0.003 0 -0.037" rpy="2.6707995 -0.0000107 1.5708003"/>
+            <geometry>
+                <box size="0.0465 0.036 0.02"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.032" y="0.0465" z="0.07">
+            <origin xyz="0 0 -0.044"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="right_knee_joint" type="revolute">
@@ -590,6 +943,31 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0.00425 0 -0.008" rpy="1.0707999 -0.000011 1.5707994"/>
+            <geometry>
+                <box size="0.0465 0.036 0.02"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0.0115 0 -0.028"/>
+            <geometry>
+                <box size="0.0215 0.032 0.02"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0.004 0.0 -0.054" rpy="1.9307994 -0.0000108 1.5708006"/>
+            <geometry>
+                <box size="0.032 0.042 0.023"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.032" y="0.0465" z="0.07">
+            <origin xyz="0 0 -0.044"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="right_ankle_joint" type="revolute">
@@ -616,6 +994,24 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0 0 -0.037"/>
+            <geometry>
+                <box size="0.032 0.0425 0.0235"/>
+            </geometry>
+        </collision>
+
+        <collision>
+            <origin xyz="0 0 -0.007"/>
+            <geometry>
+                <box size="0.02 0.0465 0.036"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.032" y="0.0465" z="0.0595">
+            <origin xyz="0 0 -0.019"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="right_foot_joint" type="revolute">
@@ -634,6 +1030,17 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0 -0.0265 -0.01825"/>
+            <geometry>
+                <box size="0.108 0.071 0.0165"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass="0.5" x="0.108" y="0.071" z="0.0165">
+            <origin xyz="0 -0.0265 -0.01825"/>
+        </xacro:inertial_box>
     </link>
 
 </robot>
