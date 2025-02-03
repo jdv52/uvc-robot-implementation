@@ -1,0 +1,23 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 30
+
+    joint_broad:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    effort_controller:
+      type: effort_controllers/JointGroupEffortController
+
+effort_controller:
+  ros__parameters:
+    joints:
+      - waist_joint
+      - head_joint
+      - left_shoulder_joint
+      - left_arm_joint
+      - left_elbow_joint
+      - left_forearm_joint
+      - right_shoulder_joint
+      - right_arm_joint
+      - right_elbow_joint
+      - right_forearm_joint

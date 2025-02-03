@@ -19,7 +19,7 @@ def generate_launch_description():
     rsp = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('uvc_robot_description'), 'launch', 'rsp.launch.py'
-        )])
+        )]), launch_arguments={'use_sim_time': 'true'}.items()
     )
 
     gz_sim = IncludeLaunchDescription(
@@ -33,6 +33,17 @@ def generate_launch_description():
             ]
         ),
         launch_arguments={"gz_args": [" -r -v 4 ", 'empty.sdf']}.items(),
+    )
+
+    bridge_params = os.path.join(get_package_share_directory('uvc_robot_controller'), 'config', 'gz_bridge.yaml')
+    ros_gz_bridge = Node(
+        package="ros_gz_bridge",
+        executable="parameter_bridge",
+        arguments=[
+            '--ros-args',
+            '-p',
+            f'config_file:={bridge_params}',
+        ]
     )
 
     spawn_entity = Node(
@@ -49,5 +60,6 @@ def generate_launch_description():
     return LaunchDescription([
         rsp,
         gz_sim,
-        spawn_entity
+        spawn_entity,
+        ros_gz_bridge
     ])
