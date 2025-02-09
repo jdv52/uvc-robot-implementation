@@ -27,6 +27,12 @@ def generate_launch_description():
         arguments=["joint_broad"]
     )
 
+    imu_broad_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["imu_sensor_broadcaster"]
+    )
+
     effort_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
@@ -36,5 +42,6 @@ def generate_launch_description():
     return LaunchDescription([
         gazebo,
         TimerAction(period=5.0, actions=[joint_broad_spawner]),
-        TimerAction(period=5.0, actions=[effort_controller_spawner])
+        TimerAction(period=10.0, actions=[effort_controller_spawner]),
+        TimerAction(period=5.0, actions=[imu_broad_spawner])
     ])

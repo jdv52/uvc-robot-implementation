@@ -8,6 +8,9 @@ controller_manager:
     effort_controller:
       type: effort_controllers/JointGroupEffortController
 
+    imu_sensor_broadcaster:
+      type: imu_sensor_broadcaster/IMUSensorBroadcaster
+
 effort_controller:
   ros__parameters:
     joints:
@@ -21,3 +24,21 @@ effort_controller:
       - right_arm_joint
       - right_elbow_joint
       - right_forearm_joint
+      - left_hip1_joint
+      - left_hip2_joint
+      - left_leg_joint
+      - left_knee_joint
+      - left_ankle_joint
+      - left_foot_joint
+      - right_hip1_joint
+      - right_hip2_joint
+      - right_leg_joint
+      - right_knee_joint
+      - right_ankle_joint
+      - right_foot_joint
+
+imu_sensor_broadcaster:
+  ros__parameters:
+
+    sensor_name: "imu_sensor"
+    frame_id:  "imu_link"

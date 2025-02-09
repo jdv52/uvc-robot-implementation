@@ -77,6 +77,8 @@
         <origin xyz="-0.02425 0 -0.04715"/>
         <axis xyz="0 0 1"/>
         <limit lower="-10" upper="10" effort="10" velocity="10"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="waist_link">
@@ -111,6 +113,8 @@
         <origin xyz="-0.00395 0 0.0134"/>
         <axis xyz="0 0 1"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="head_link">
@@ -146,6 +150,8 @@
         <origin xyz="-0.0041 0.04725 -0.0009"/>
         <axis xyz="0 -1 0"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="left_shoulder_link">
@@ -179,6 +185,8 @@
         <origin xyz="0 0.02645 0"/>
         <axis xyz="1 0 0"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="left_arm_link">
@@ -242,6 +250,8 @@
         <origin xyz="0.00225 -0.00025 -0.07365"/>
         <axis xyz="0 0 1"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="left_elbow_link">
@@ -271,6 +281,8 @@
         <origin xyz="0.0022 0.0 -0.0117"/>
         <axis xyz="0 -1 0"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="left_forearm_link">
@@ -331,6 +343,8 @@
         <origin xyz="-0.0041 -0.04725 -0.0009"/>
         <axis xyz="0 -1 0"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="right_shoulder_link">
@@ -365,6 +379,8 @@
         <origin xyz="0 -0.02645 0"/>
         <axis xyz="-1 0 0"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="right_arm_link">
@@ -429,6 +445,8 @@
         <origin xyz="0.00225 0.00025 -0.07365"/>
         <axis xyz="0 0 -1"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="right_elbow_link">
@@ -458,6 +476,8 @@
         <origin xyz="0.0022 0.0 -0.0117"/>
         <axis xyz="0 -1 0"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="right_forearm_link">
@@ -519,6 +539,8 @@
         <origin xyz="0.00875 0.02145 -0.03995"/>
         <axis xyz="0 0 1"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="left_hip1_link">
@@ -548,6 +570,8 @@
         <origin xyz="0 -0.00455 -0.02235"/>
         <axis xyz="1 0 0"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="left_hip2_link">
@@ -592,6 +616,8 @@
         <axis xyz="0 -1 0"/>
         <origin xyz="-0.0008 0.0113 -0.0387"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="left_leg_link">
@@ -651,6 +677,8 @@
         <axis xyz="0 1 0"/>
         <origin xyz="0.00015 0.0 -0.06375"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="left_knee_link">
@@ -710,6 +738,8 @@
         <axis xyz="0 1 0"/>
         <origin xyz="0.0003 -0.0002 -0.0643"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="left_ankle_link">
@@ -754,6 +784,8 @@
         <axis xyz="1 0 0"/>
         <origin xyz="0 -0.01125 -0.037"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="left_foot_link">
@@ -785,6 +817,8 @@
         <origin xyz="0.00875 -0.02145 -0.03995"/>
         <axis xyz="0 0 -1"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="right_hip1_link">
@@ -814,6 +848,8 @@
         <origin xyz="0 0.00455 -0.02235"/>
         <axis xyz="-1 0 0"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="right_hip2_link">
@@ -858,6 +894,8 @@
         <axis xyz="0 -1 0"/>
         <origin xyz="-0.0008 -0.0113 -0.0387"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="right_leg_link">
@@ -917,6 +955,8 @@
         <axis xyz="0 1 0"/>
         <origin xyz="0.00015 0.0 -0.06375"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="right_knee_link">
@@ -976,6 +1016,8 @@
         <axis xyz="0 1 0"/>
         <origin xyz="0.0003 0.0002 -0.0643"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="right_ankle_link">
@@ -1020,6 +1062,8 @@
         <axis xyz="-1 0 0"/>
         <origin xyz="0 0.01125 -0.037"/>
         <limit lower="-2.356" upper="2.356" effort="1.3729" velocity="7.48"/>
+
+        <dynamics damping="0.5" friction="0.2"/>
     </joint>
 
     <link name="right_foot_link">
