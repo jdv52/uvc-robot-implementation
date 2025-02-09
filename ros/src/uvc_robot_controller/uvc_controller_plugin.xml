@@ -1,0 +1,7 @@
+<library path="uvc_controller.so">
+    <class name="uvc_controller/UVC_Controller" type="uvc_controller::UVC_Controller" base_class_type="controller_interface::ChainableControllerInterface">
+        <description>
+            A controller implemeting upper-body vertical control
+        </description>
+    </class>
+</library>
