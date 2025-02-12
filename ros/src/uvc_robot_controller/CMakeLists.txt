@@ -29,6 +29,7 @@ generate_parameter_library(uvc_robot_controller_params
 
 add_library(uvc_robot_controller SHARED
   src/uvc_robot_controller.cpp
+  src/uvc_controller_fsm.cpp
 )
 target_compile_features(uvc_robot_controller PUBLIC cxx_std_17)
 target_include_directories(uvc_robot_controller PUBLIC

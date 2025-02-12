@@ -5,40 +5,11 @@ controller_manager:
     joint_broad:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-    effort_controller:
-      type: position_controllers/JointGroupPositionController
-
     imu_sensor_broadcaster:
       type: imu_sensor_broadcaster/IMUSensorBroadcaster
 
     uvc_controller:
       type: uvc_robot_controller/UVC_Controller
-
-effort_controller:
-  ros__parameters:
-    joints:
-      - waist_joint
-      - head_joint
-      - left_shoulder_joint
-      - left_arm_joint
-      - left_elbow_joint
-      - left_forearm_joint
-      - right_shoulder_joint
-      - right_arm_joint
-      - right_elbow_joint
-      - right_forearm_joint
-      - left_hip1_joint
-      - left_hip2_joint
-      - left_leg_joint
-      - left_knee_joint
-      - left_ankle_joint
-      - left_foot_joint
-      - right_hip1_joint
-      - right_hip2_joint
-      - right_leg_joint
-      - right_knee_joint
-      - right_ankle_joint
-      - right_foot_joint
 
 imu_sensor_broadcaster:
   ros__parameters:

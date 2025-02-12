@@ -5,29 +5,19 @@
 #include <string>
 #include <chrono>
 
-#include "controller_interface/chainable_controller_interface.hpp"
+#include "controller_interface/controller_interface.hpp"
 #include "rclcpp_lifecycle/state.hpp"
 #include <uvc_robot_controller/uvc_robot_controller_params.hpp>
-
+#include <uvc_robot_controller/uvc_controller_fsm.hpp>
 
 namespace uvc_robot_controller
 {
-    typedef enum {
-        INITIALIZATION = 0,
-        INITIAL_ANGLE_ADJUSTMENT = 1,  
-    };
-
-
-    class UVC_Controller : public controller_interface::ChainableControllerInterface
+    class UVC_Controller : public controller_interface::ControllerInterface
     {
         public:
             UVC_Controller();
 
-            bool on_set_chained_mode(bool chained_mode) override;
-
-            controller_interface::return_type update_reference_from_subscribers(const rclcpp::Time &time, const rclcpp::Duration &period) override;
-
-            controller_interface::return_type update_and_write_commands(const rclcpp::Time &time, const rclcpp::Duration &period) override;
+            controller_interface::return_type update(const rclcpp::Time &time, const rclcpp::Duration &period) override;
 
             controller_interface::InterfaceConfiguration command_interface_configuration() const override;
 
@@ -51,11 +41,14 @@ namespace uvc_robot_controller
                 const rclcpp_lifecycle::State & previous_state) override;
 
         private:
+            std::vector<std::string> exported_reference_interface_names_;
+            std::vector<std::string> exported_state_interface_names_;
+
+            std::unique_ptr<UVC_Controller_FSM> fsm;
+
             std::shared_ptr<ParamListener> param_listener_;
             Params params_;
     };
-
-
 }
 
 #endif

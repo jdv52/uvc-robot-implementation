@@ -790,22 +790,22 @@
 
     <link name="left_foot_link">
         <visual>
-            <origin xyz="0 0.0265 -0.01825"/>
+            <origin xyz="0 0.01125 -0.01825"/>
             <geometry>
-                <box size="0.108 0.071 0.0165"/>
+                <box size="0.04 0.0425 0.0165"/>
             </geometry>
             <material name="white"/>
         </visual>
 
         <collision>
-            <origin xyz="0 0.0265 -0.01825"/>
+           <origin xyz="0 0.01125 -0.01825"/>
             <geometry>
-                <box size="0.108 0.071 0.0165"/>
+                <box size="0.04 0.0425 0.0165"/>
             </geometry>
         </collision>
 
-        <xacro:inertial_box mass="0.5" x="0.108" y="0.071" z="0.0165">
-            <origin xyz="0 0.0265 -0.01825"/>
+        <xacro:inertial_box mass="0.5" x="0.04" y="0.0425" z="0.0165">
+            <origin xyz="0 0.01125 -0.01825"/>
         </xacro:inertial_box>
     </link>
 
@@ -1068,22 +1068,22 @@
 
     <link name="right_foot_link">
         <visual>
-            <origin xyz="0 -0.0265 -0.01825"/>
+            <origin xyz="0 -0.01125 -0.01825"/>
             <geometry>
-                <box size="0.108 0.071 0.0165"/>
+                <box size="0.04 0.0425 0.0165"/>
             </geometry>
             <material name="white"/>
         </visual>
 
         <collision>
-            <origin xyz="0 -0.0265 -0.01825"/>
+            <origin xyz="0 -0.01125 -0.01825"/>
             <geometry>
-                <box size="0.108 0.071 0.0165"/>
+                <box size="0.04 0.0425 0.0165"/>
             </geometry>
         </collision>
 
-        <xacro:inertial_box mass="0.5" x="0.108" y="0.071" z="0.0165">
-            <origin xyz="0 -0.0265 -0.01825"/>
+        <xacro:inertial_box mass="0.5" x="0.04" y="0.0425" z="0.0165">
+            <origin xyz="0 -0.01125 -0.01825"/>
         </xacro:inertial_box>
     </link>
 
