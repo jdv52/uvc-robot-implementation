@@ -6,10 +6,13 @@ controller_manager:
       type: joint_state_broadcaster/JointStateBroadcaster
 
     effort_controller:
-      type: effort_controllers/JointGroupEffortController
+      type: position_controllers/JointGroupPositionController
 
     imu_sensor_broadcaster:
       type: imu_sensor_broadcaster/IMUSensorBroadcaster
+
+    uvc_controller:
+      type: uvc_robot_controller/UVC_Controller
 
 effort_controller:
   ros__parameters:

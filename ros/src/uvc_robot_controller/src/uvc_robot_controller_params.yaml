@@ -1,0 +1,184 @@
+uvc_robot_controller:
+  joint_names:
+    head_joint_name: {
+      type: string,
+      default_value: head_joint,
+      description: "Joint name for head joint"
+    }
+
+    waist_joint_name: {
+      type: string,
+      default_value: waist_joint,
+      description: "Joint name for waist joint"
+    }
+
+    left_shoulder_joint_name: {
+      type: string,
+      default_value: left_shoulder_joint,
+      description: "Joint name for left shoulder joint"
+    }
+
+    left_arm_joint_name: {
+      type: string,
+      default_value: left_arm_joint,
+      description: "Joint name for left arm joint"
+    }
+
+    left_elbow_joint_name: {
+      type: string,
+      default_value: left_elbow_joint,
+      description: "Joint name for left elbow joint"
+    }
+
+    left_forearm_joint_name: {
+      type: string,
+      default_value: left_forearm_joint,
+      description: "Joint name for left forearm joint"
+    }
+
+    right_shoulder_joint_name: {
+      type: string,
+      default_value: right_shoulder_joint,
+      description: "Joint name for right shoulder joint"
+    }
+
+    right_arm_joint_name: {
+      type: string,
+      default_value: right_arm_joint,
+      description: "Joint name for right arm joint"
+    }
+
+    right_elbow_joint_name: {
+      type: string,
+      default_value: right_elbow_joint,
+      description: "Joint name for right elbow joint"
+    }
+
+    right_forearm_joint_name: {
+      type: string,
+      default_value: right_forearm_joint,
+      description: "Joint name for right forearm joint"
+    }
+
+    left_hip1_joint_name: {
+      type: string,
+      default_value: left_hip1_joint,
+      description: "Joint name for left hip1 joint"
+    }
+
+    left_hip2_joint_name: {
+      type: string,
+      default_value: left_hip2_joint,
+      description: "Joint name for left hip2 joint"
+    }
+
+    left_leg_joint_name: {
+      type: string,
+      default_value: left_leg_joint,
+      description: "Joint name for left leg joint"
+    }
+
+    left_knee_joint_name: {
+      type: string,
+      default_value: left_knee_joint,
+      description: "Joint name for left knee joint"
+    }
+
+    left_ankle_joint_name: {
+      type: string,
+      default_value: left_ankle_joint,
+      description: "Joint name for left ankle joint"
+    }
+
+    left_foot_joint_name: {
+      type: string,
+      default_value: left_foot_joint,
+      description: "Joint name for left foot joint"
+    }
+
+    right_hip1_joint_name: {
+      type: string,
+      default_value: right_hip1_joint,
+      description: "Joint name for right hip1 joint"
+    }
+
+    right_hip2_joint_name: {
+      type: string,
+      default_value: right_hip2_joint,
+      description: "Joint name for right hip2 joint"
+    }
+
+    right_leg_joint_name: {
+      type: string,
+      default_value: right_leg_joint,
+      description: "Joint name for right leg joint"
+    }
+
+    right_knee_joint_name: {
+      type: string,
+      default_value: right_knee_joint,
+      description: "Joint name for right knee joint"
+    }
+
+    right_ankle_joint_name: {
+      type: string,
+      default_value: right_ankle_joint,
+      description: "Joint name for right ankle joint"
+    }
+
+    right_foot_joint_name: {
+      type: string,
+      default_value: right_foot_joint,
+      description: "Joint name for right foot joint"
+    }
+  imu:
+    sensor_name: {
+      type: string,
+      default_value: "imu_sensor",
+      description: "Sensor name"
+    }
+    state_interface_names:
+      orientation:
+        x: {
+          type: string,
+          default_value: "orientation.x"
+        }
+        y: {
+          type: string,
+          default_value: "orientation.y"
+        }
+        z: {
+          type: string,
+          default_value: "orientation.z"
+        }
+        w: {
+          type: string,
+          default_value: "orientation.w"
+        }
+      angular_velocity:
+        x: {
+          type: string,
+          default_value: "angular_velocity.x"
+        }
+        y: {
+          type: string,
+          default_value: "angular_velocity.y"
+        }
+        z: {
+          type: string,
+          default_value: "angular_velocity.z"
+        }
+      linear_acceleration:
+        x: {
+          type: string,
+          default_value: "linear_acceleration.x"
+        }
+        y: {
+          type: string,
+          default_value: "linear_acceleration.y"
+        }
+        z: {
+          type: string,
+          default_value: "linear_acceleration.z"
+        }
+  

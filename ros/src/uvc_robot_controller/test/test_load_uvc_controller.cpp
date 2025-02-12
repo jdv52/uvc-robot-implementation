@@ -28,15 +28,10 @@ TEST(TestLoadUVCController, load_controller)
     std::make_shared<rclcpp::executors::SingleThreadedExecutor>();
 
   controller_manager::ControllerManager cm(
-    executor, ros2_control_test_assets::diffbot_urdf, true, "test_controller_manager");
-  const std::string test_file_path =
-    std::string(TEST_FILES_DIRECTORY) + "/config/test_uvc_controller.yaml";
+    executor, ros2_control_test_assets::minimal_robot_urdf, true, "test_controller_manager");
 
-  cm.set_parameter({"test_uvc_controller.params_file", test_file_path});
-  cm.set_parameter(
-    {"test_uvc_controller.type", "uvc_controller/UVC_Controller"});
-
-  ASSERT_NE(cm.load_controller("test_uvc_controller"), nullptr);
+  ASSERT_NE(cm.load_controller("test_uvc_controller", "uvc_robot_controller/UVC_Controller"), nullptr);
+  // ASSERT_NE(0, 1);
 }
 
 int main(int argc, char ** argv)

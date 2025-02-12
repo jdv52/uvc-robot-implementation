@@ -23,16 +23,22 @@ endforeach()
 add_compile_definitions(RCLCPPUTILS_VERSION_MAJOR=${rclcpputils_VERSION_MAJOR})
 add_compile_definitions(RCLCPPUTILS_VERSION_MAJOR=${rclcpputils_VERSION_MINOR})
 
-add_library(uvc_controller SHARED
-  src/uvc_controller.cpp
+generate_parameter_library(uvc_robot_controller_params
+  src/uvc_robot_controller_params.yaml
 )
-target_compile_features(uvc_controller PUBLIC cxx_std_17)
-target_include_directories(uvc_controller PUBLIC
+
+add_library(uvc_robot_controller SHARED
+  src/uvc_robot_controller.cpp
+)
+target_compile_features(uvc_robot_controller PUBLIC cxx_std_17)
+target_include_directories(uvc_robot_controller PUBLIC
   $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include/uvc_controller>
+  $<INSTALL_INTERFACE:include/uvc_robot_controller>
 )
-ament_target_dependencies(uvc_controller PUBLIC ${THIS_PACKAGE_INCLUDE_DEPENDS})
-pluginlib_export_plugin_description_file(uvc_controller uvc_controller_plugin.xml)
+target_link_libraries(uvc_robot_controller PUBLIC uvc_robot_controller_params)
+target_compile_definitions(uvc_robot_controller PUBLIC "PLUGINLIB__DISABLE_BOOST_FUNCTIONS")
+ament_target_dependencies(uvc_robot_controller PUBLIC ${THIS_PACKAGE_INCLUDE_DEPENDS})
+pluginlib_export_plugin_description_file(controller_interface uvc_robot_controller_plugin.xml)
 
 if(BUILD_TESTING)
   find_package(ament_cmake_gmock REQUIRED)
@@ -62,12 +68,17 @@ install(
   DESTINATION share/${PROJECT_NAME}
 )
 
-install(TARGETS uvc_controller
-  EXPORT export_uvc_controller
+install(TARGETS uvc_robot_controller uvc_robot_controller_params
+  EXPORT export_uvc_robot_controller
   RUNTIME DESTINATION bin
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
 )
 
-
+ament_export_libraries(
+  uvc_robot_controller
+)
+ament_export_targets(
+  export_uvc_robot_controller
+)
 ament_package()

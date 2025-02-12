@@ -179,6 +179,7 @@
                     <param name="min">-10</param>
                     <param name="max">10</param>
                 </command_interface>
+                <command_interface name="position"/>
 
                 <state_interface name="effort"/>
                 <state_interface name="velocity"/>
@@ -190,6 +191,7 @@
                     <param name="min">-10</param>
                     <param name="max">10</param>
                 </command_interface>
+                <command_interface name="position"/>
 
                 <state_interface name="effort"/>
                 <state_interface name="velocity"/>
@@ -201,6 +203,7 @@
                     <param name="min">-10</param>
                     <param name="max">10</param>
                 </command_interface>
+                <command_interface name="position"/>
 
                 <state_interface name="effort"/>
                 <state_interface name="velocity"/>
@@ -212,6 +215,7 @@
                     <param name="min">-10</param>
                     <param name="max">10</param>
                 </command_interface>
+                <command_interface name="position"/>
 
                 <state_interface name="effort"/>
                 <state_interface name="velocity"/>
@@ -223,6 +227,7 @@
                     <param name="min">-10</param>
                     <param name="max">10</param>
                 </command_interface>
+                <command_interface name="position"/>
 
                 <state_interface name="effort"/>
                 <state_interface name="velocity"/>
@@ -234,6 +239,7 @@
                     <param name="min">-10</param>
                     <param name="max">10</param>
                 </command_interface>
+                <command_interface name="position"/>
 
                 <state_interface name="effort"/>
                 <state_interface name="velocity"/>
@@ -245,6 +251,7 @@
                     <param name="min">-10</param>
                     <param name="max">10</param>
                 </command_interface>
+                <command_interface name="position"/>
 
                 <state_interface name="effort"/>
                 <state_interface name="velocity"/>
@@ -256,6 +263,7 @@
                     <param name="min">-10</param>
                     <param name="max">10</param>
                 </command_interface>
+                <command_interface name="position"/>
 
                 <state_interface name="effort"/>
                 <state_interface name="velocity"/>

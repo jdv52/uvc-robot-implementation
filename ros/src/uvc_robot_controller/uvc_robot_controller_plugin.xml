@@ -1,0 +1,7 @@
+<library path="uvc_robot_controller">
+    <class name="uvc_robot_controller/UVC_Controller" type="uvc_robot_controller::UVC_Controller" base_class_type="controller_interface::ChainableControllerInterface">
+        <description>
+            A controller implemeting upper-body vertical control
+        </description>
+    </class>
+</library>

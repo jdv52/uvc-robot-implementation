@@ -39,9 +39,16 @@ def generate_launch_description():
         arguments=["effort_controller"]
     )
 
+    uvc_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["uvc_controller"]
+    )
+
     return LaunchDescription([
         gazebo,
         TimerAction(period=5.0, actions=[joint_broad_spawner]),
         TimerAction(period=10.0, actions=[effort_controller_spawner]),
-        TimerAction(period=5.0, actions=[imu_broad_spawner])
+        TimerAction(period=5.0, actions=[imu_broad_spawner]),
+        TimerAction(period=5.0, actions=[uvc_controller_spawner])
     ])

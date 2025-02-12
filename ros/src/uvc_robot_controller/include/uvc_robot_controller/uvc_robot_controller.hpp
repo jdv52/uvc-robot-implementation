@@ -7,17 +7,21 @@
 
 #include "controller_interface/chainable_controller_interface.hpp"
 #include "rclcpp_lifecycle/state.hpp"
+#include <uvc_robot_controller/uvc_robot_controller_params.hpp>
 
-namespace uvc_controller
+
+namespace uvc_robot_controller
 {
+    typedef enum {
+        INITIALIZATION = 0,
+        INITIAL_ANGLE_ADJUSTMENT = 1,  
+    };
+
+
     class UVC_Controller : public controller_interface::ChainableControllerInterface
     {
         public:
             UVC_Controller();
-
-            std::vector<hardware_interface::StateInterface> on_export_state_interfaces() override;
-
-            std::vector<hardware_interface::CommandInterface> on_export_reference_interfaces() override;
 
             bool on_set_chained_mode(bool chained_mode) override;
 
@@ -45,7 +49,13 @@ namespace uvc_controller
 
             controller_interface::CallbackReturn on_error(
                 const rclcpp_lifecycle::State & previous_state) override;
+
+        private:
+            std::shared_ptr<ParamListener> param_listener_;
+            Params params_;
     };
+
+
 }
 
 #endif
