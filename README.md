@@ -2,7 +2,7 @@
 
 This is an implementation of a bipedal robot inspired by a robot created by Masahiko Yamaguchi (Dr. Guero) in this video:
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/B6YltEG2mNs/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/B6YltEG2mNs/0.jpg)](https://www.youtube.com/watch?v=B6YltEG2mNs)
 
 This is an attempt to port and simulate the upper body vertical controller used to control this robot to ROS2 and Gazebo.
 
