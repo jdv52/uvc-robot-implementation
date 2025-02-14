@@ -12,6 +12,7 @@ log/
 .idea/
 *.suo
 *.user
+.vscode/
 
 # Catkin workspace files
 CMakeLists.txt.user
